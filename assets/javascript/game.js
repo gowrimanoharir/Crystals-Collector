@@ -1,93 +1,86 @@
+var crystalCollector = {
 
-//Global Variable for Wins and Losses
-var wins=0, losses=0;
+	//Variables for Wins and Losses that will not be reset each round
+	wins: 0, 
+	losses: 0,
 
-/*Round Variable for Game Number, 
-Crystal Array for 4 crystals, 
-Current Round user score and related functions */
-var gameNum, isWin, crystalNum, curUserScore;
+	/*Round Variables for Game Number, 
+	Crystal Array for 4 crystals, 
+	Current Round user score and related functions */
+	gameNum: null, 
+	isWin: null, 
+	crystalNum: [], 
+	curUserScore: 0,
 
-//Ininitialize current round variables
-function curRoundInitialize()
-{
-	gameNum=getRandNum(19,120);
-	roundEnd=false;
-	crystalNum=[];
-	curUserScore=0;
-	setCrystalNum(1, 12);
-	$('#gameNumber').html(gameNum);
-	$('#userScore').html(curUserScore);
-}
+	//Ininitialize current round variables
+	curRoundInitialize: function()
+	{
+		this.gameNum=this.getRandNum(19,120);
+		this.crystalNum=[];
+		this.curUserScore=0;
+		this.setCrystalNum(1, 12);
+		$('#gameNumber').html(this.gameNum);
+		$('#userScore').html(this.curUserScore);
+	},
 
-curRoundInitialize();
-//Jquery click event to add the corresponding number to the current user score, then compare with the game number, when equals then wins+1 if > than game number then loses+1
-//After Wins or Loses regenerate the Game number and Crystal Array with new random and reset current round user score to 0
+	/*function to check for wins and losses*/
+	checkWinLose: function()
+	{
+		if(this.curUserScore===this.gameNum){
+			this.wins+=1;
+			$('#win').html(this.wins);
+			this.curRoundInitialize();
+		}
+		else if(this.curUserScore>this.gameNum){
+			this.losses+=1;
+			$('#lose').html(this.losses);
+			this.curRoundInitialize();
+		}
+	},
 
+	/*Have a function to set the Crystal random number 
+	between 1 - 12 for 4 crystals in an array without 
+	duplicates*/
+	setCrystalNum: function(min, max)
+	{
+	  var rand=this.getRandNum(min, max);
+	  while(this.crystalNum.length<4)
+	  {
+		  if (this.crystalNum.includes(rand))
+		    this.setCrystalNum(min, max);
+		  else
+		    this.crystalNum.push(rand);
+	  }
+	},
 
+	/*Function to get the random number 
+	for a given min and max*/
+	getRandNum: function(min,max)
+	{
+		return (Math.floor(Math.random()*(max-min+1)+min))
+	}
+
+};
+
+//Initialize the game
+var play = crystalCollector;
+play.curRoundInitialize();
+
+//Wait for HTML to load
 $(document).ready(function(){
 
+	//jQuery to listen to click event
 
-	$('#gem1').on('click', function(){
-		curUserScore += crystalNum[0];
-		$('#userScore').html(curUserScore);
-		checkWinLose();
+	$('.gem').on('click', function(){
+
+		/*Increase User Score based on which gem button 
+		 was clicked identified through value attribute*/
+		play.curUserScore += play.crystalNum[$(this).attr('value')];
+
+		//display the user score
+		$('#userScore').html(play.curUserScore);
+
+		//check for win or lose
+		play.checkWinLose();
 	});
-
-	$('#gem2').on('click', function(){
-		curUserScore += crystalNum[1];
-		$('#userScore').html(curUserScore);
-		checkWinLose();
-	});
-
-	$('#gem3').on('click', function(){
-		curUserScore += crystalNum[2];
-		$('#userScore').html(curUserScore);
-		checkWinLose();
-	});
-
-	$('#gem4').on('click', function(){
-		curUserScore += crystalNum[3];
-		$('#userScore').html(curUserScore);
-		checkWinLose();
-	});
-
 });
-
-/*function to check for wins and losses*/
-function checkWinLose()
-{
-	if(curUserScore===gameNum){
-		//roundEnd=true;
-		wins+=1;
-		$('#win').html(wins);
-		curRoundInitialize();
-	}
-	else if(curUserScore>gameNum){
-		//roundEnd=true;
-		losses+=1;
-		$('#lose').html(losses);
-		curRoundInitialize();
-	}
-}
-
-
-/*Have a function to get the random number 
-for a given min and max*/
-function getRandNum(min,max){
-		return (Math.floor(Math.random()*(max-min+1)+min))
-}
-
-
-/*Have a function to set the Crystal random number 
-between 1 - 12 for 4 crystals in a array without 
-duplicates*/
-function setCrystalNum(min, max){
-  rand=getRandNum(min, max);
-  while(crystalNum.length<4)
-  {
-	  if (crystalNum.includes(rand))
-	    setCrystalNum(min, max);
-	  else
-	    crystalNum.push(rand);
-  }
- }
