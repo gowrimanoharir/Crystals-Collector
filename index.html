@@ -15,16 +15,78 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<!--Link the Google fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Orbitron|Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kumar+One|Oleo+Script" rel="stylesheet">
+
 </head>
 <body>
-	<p>Game Number:<span id='gameNumber'></span></p>
-	<p>Wins: <span id='win'></span>Losses:<span id='lose'> </span></p>
-	<p>User Score:<span id='userScore'></span></p>
-	<button class='hobbit' value='0'>Frodo</button>
-	<button class='hobbit' value='1'>Sam</button>
-	<button class='hobbit' value='2'>Merry</button>
-	<button class='hobbit' value='3'>Pippin</button>
+
+	<div class="container">
+	
+		<!--Header section-->
+		<div class="row text-center">
+			<h1 class="hdrfnt">BE MY PRECIOUS!!</h1>
+		</div>
+
+		<!--Score section-->
+		<div class="row text-center score">
+			<p>Wins: <span id='win' class='wclr'>0</span> | Losses: <span id='lose' class='lclr'>0</span></p>
+		</div>
+
+		<!--Game section-->	
+		<div class="jumbotron">
+
+			<div class="row toptm">
+				<div class="col-md-3 col-xs-3">
+					<h3 class='text-center hdrfnt'>Gollum</h3>
+					<p class='text-center'>
+					<span id='gameNumber' class='numdisplay'>
+					</span>
+					</p>
+				</div>
+				
+				<div class="col-md-6 col-xs-6">
+					<img src="assets/images/wait.jpg" class="imgsize center-block">
+				</div>
+
+				<div class="col-md-3 col-xs-3">
+					<h3 class='text-center hdrfnt'>Fellowship</h3>
+					<p class='text-center'>
+					<span id='userScore' class='numdisplay'>
+					</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="jumbotron btnsec">
+
+			<div class="row">
+				<div class="col-md-3 col-xs-3">
+					<div class='js-hobbit  center-block gmbutton' value='0'>Frodo</div>
+				</div>
+
+				<div class="col-md-3 col-xs-3">
+					<div class='js-hobbit  center-block gmbutton' value='1' >Sam</div>
+				</div>
+
+				<div class="col-md-3 col-xs-3">
+					<div class='js-hobbit  center-block gmbutton' value='2' >Aragorn</div>
+				</div>
+
+				<div class="col-md-3 col-xs-3">
+					<div class='js-hobbit  center-block gmbutton' value='3' >Legolas</div>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>
+
+		<!--section for footer-->
+			<div class="container footer navbar-fixed-bottom">
+			     <p class="text-muted text-center">
+			     	<span>&copy; 2017 Copyright Gowri M Rajasekaran</span>
+			     </p>
+			</div>
 
 	<!-- Added link to the jQuery Library -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

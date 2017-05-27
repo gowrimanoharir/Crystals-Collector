@@ -1,5 +1,82 @@
 body{
-	background-image: url('../images/World_map.jpg');
-	background-size: auto 100%;
-	background-repeat: no-repeat;
+	background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: 150%;
 }
+
+
+/*set Header font styles*/
+.hdrfnt{
+	font-family: 'Kumar One', cursive;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+/*Add top margins to the header and playsections*/
+h1, .toptm{
+	margin-top: 3%;
+}
+
+
+/*Style the Score section*/
+.score{
+	font-size: 20px;
+	font-family: 'Kumar One', cursive;
+	font-weight: bold;
+}
+
+.wclr{
+	color: green;
+}
+
+.lclr{
+	color: red;
+}
+
+
+.jumbotron{
+	background: none;
+}
+
+.numdisplay{
+	font-size: 150px;
+}
+
+.numhdr{
+	font-size: 60px;
+}
+
+.imgsize{
+	width: 400px;
+	height: 300px;
+	border-radius: 180px;
+}
+
+.gmbutton{
+	background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding-top: 20px;
+	text-align: center;
+	height: 100px;
+	color: #F0CB35;
+	font-size: 40px;
+	font-weight: normal;
+	font-family: 'Oleo Script', cursive;
+}
+
+
+.gmbutton:hover{
+	cursor: pointer;
+}
+
+
+/*Change width and background for footer section*/
+.footer{
+	width: 100%;
+	background-color: #1c1e22;
+	padding-top: 5px;
+}
+
+

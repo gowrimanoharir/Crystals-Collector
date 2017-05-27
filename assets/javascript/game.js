@@ -1,4 +1,4 @@
-var ringDestoyer = {
+var precious = {
 
 	//Variables for Wins and Losses that will not be reset each round
 	wins: 0, 
@@ -62,16 +62,18 @@ var ringDestoyer = {
 
 };
 
-//Initialize the game
-var play = ringDestoyer;
-play.curRoundInitialize();
+
 
 //Wait for HTML to load
 $(document).ready(function(){
 
+	//Initialize the game
+	var play = precious;
+	play.curRoundInitialize();
+
 	//jQuery to listen to click event
 
-	$('.hobbit').on('click', function(){
+	$('.js-hobbit').on('click', function(){
 
 		/*Increase User Score based on which gem button 
 		 was clicked identified through value attribute*/
