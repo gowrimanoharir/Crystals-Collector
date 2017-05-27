@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Crystal Collector</title>
+	<title>My Precious</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,19 +19,19 @@
 
 </head>
 <body>
-
 	<div class="container">
 	
 		<!--Header section-->
-		<div class="row text-center">
-			<h1 class="hdrfnt">BE MY PRECIOUS!!</h1>
+		<div class="row">
+			<h1 class="hdrfnt text-center">MY PRECIOUS!!</h1>
 		</div>
 
 		<!--Score section-->
 		<div class="row text-center score">
 			<p>Wins: <span id='win' class='wclr'>0</span> | Losses: <span id='lose' class='lclr'>0</span></p>
+			<h4 id="instructions" class="instruc"><i>Instructions</i></h>
 		</div>
-
+		
 		<!--Game section-->	
 		<div class="jumbotron">
 
@@ -45,7 +45,9 @@
 				</div>
 				
 				<div class="col-md-6 col-xs-6">
-					<img src="assets/images/wait.jpg" class="imgsize center-block">
+					<img src="assets/images/wait.jpg"
+					 class="imgsize center-block" id="again">
+					 <p class="pad text-center">&nbsp;<i id="pl-again" class='score'></i>&nbsp;</p>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
@@ -57,36 +59,57 @@
 				</div>
 			</div>
 		</div>
-		<div class="jumbotron btnsec">
+		<div class="jumbotron">
 
 			<div class="row">
 				<div class="col-md-3 col-xs-3">
-					<div class='js-hobbit  center-block gmbutton' value='0'>Frodo</div>
+					<button class='js-hobbit  btn center-block gmbutton' value='0'>Frodo</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<div class='js-hobbit  center-block gmbutton' value='1' >Sam</div>
+					<button class='js-hobbit  btn center-block gmbutton' value='1' >Sam</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<div class='js-hobbit  center-block gmbutton' value='2' >Aragorn</div>
+					<button class='js-hobbit btn center-block gmbutton' value='2' >Aragorn</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<div class='js-hobbit  center-block gmbutton' value='3' >Legolas</div>
+					<button class='js-hobbit btn  center-block gmbutton' value='3' >Legolas</button>
 				</div>
 				
 			</div>
 
 		</div>
+
 	</div>
 
-		<!--section for footer-->
-			<div class="container footer navbar-fixed-bottom">
-			     <p class="text-muted text-center">
-			     	<span>&copy; 2017 Copyright Gowri M Rajasekaran</span>
-			     </p>
-			</div>
+	<div id="overlay"></div>
+	<div id="popup">
+	    <div class="popupcontrols">
+	        <span id="popupclose">X</span>
+	    </div>
+	    <div class="popupcontent">
+	        <ul>
+	        	<h3 class="text-center">GAME PLAY:</h3>
+	        	<li>Gollum will be assigned hit points at start of each round</li>
+	        	<li>There are 4 characters chosen for you and each character gets different attack points at start of each round</li>
+	        	<li>By selecting (clicking) a character their attack point will be added to Fellowship's points</li>
+	        	<h3 class="text-center">HOW TO WIN:</h3>
+	        	<li>The Fellowship will win the round by matching total points against Gollum</li>
+	        	<li>The Fellowship will loose the round if the points go above Gollum's</li>
+	        	<li>Choose carefully and have a good game!!</li>
+	        </ul>
+	    </div>
+
+	</div>
+
+	<!--section for footer-->
+	<div class="container footer navbar-fixed-bottom">
+	     <p class="text-muted text-center">
+	     	<span>&copy; 2017 Copyright Gowri M Rajasekaran</span>
+	     </p>
+	</div>
 
 	<!-- Added link to the jQuery Library -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

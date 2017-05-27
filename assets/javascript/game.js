@@ -1,3 +1,7 @@
+//Wait for HTML to load
+$(document).ready(function(){
+
+
 var precious = {
 
 	//Variables for Wins and Losses that will not be reset each round
@@ -8,10 +12,9 @@ var precious = {
 	Hobbit Array for 4 hobbits, 
 	Current Round user score and related functions */
 	gameNum: null, 
-	isWin: null, 
 	hobbitNum: [], 
 	curUserScore: 0,
-
+	
 	//Ininitialize current round variables
 	curRoundInitialize: function()
 	{
@@ -21,20 +24,27 @@ var precious = {
 		this.setHobbitNum(1, 12);
 		$('#gameNumber').html(this.gameNum);
 		$('#userScore').html(this.curUserScore);
+		$('#again').attr("src","assets/images/wait.jpg");
+		$('#pl-again').html('');
+		$('.js-hobbit').removeAttr('disabled');
 	},
 
 	/*function to check for wins and losses*/
 	checkWinLose: function()
-	{
+	{	
 		if(this.curUserScore===this.gameNum){
 			this.wins+=1;
 			$('#win').html(this.wins);
-			this.curRoundInitialize();
+			$('#again').attr("src","assets/images/win.gif");
+			$('#pl-again').html('Click the Image to play again');
+			$('.js-hobbit').attr('disabled', 'true');
 		}
 		else if(this.curUserScore>this.gameNum){
 			this.losses+=1;
 			$('#lose').html(this.losses);
-			this.curRoundInitialize();
+			$('#again').attr("src","assets/images/lose.jpg");
+			$('#pl-again').html('Click the Image to play again');
+			$('.js-hobbit').attr('disabled', 'true');
 		}
 	},
 
@@ -62,10 +72,22 @@ var precious = {
 
 };
 
+	//Display instructions popup on game load
 
+	$('#overlay').css('display','block');
+	$('#popup').css('display','block');
+  
+	// Close Popup Event
+	$('#popupclose').on('click',function() {
+	  $('#overlay').css('display','none');
+	  $('#popup').css('display','none');
+	});
 
-//Wait for HTML to load
-$(document).ready(function(){
+	$('#instructions').on('click',function() {
+		$('#overlay').css('display','block');
+		$('#popup').css('display','block');
+	});
+
 
 	//Initialize the game
 	var play = precious;
@@ -85,4 +107,15 @@ $(document).ready(function(){
 		//check for win or lose
 		play.checkWinLose();
 	});
+
+	$('#again').on('click', function(){
+		if ($('.js-hobbit').is(':disabled')){
+		play.curRoundInitialize();
+		}
+	});
+
+
+
+
+
 });
