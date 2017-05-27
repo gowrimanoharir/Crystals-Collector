@@ -3,7 +3,7 @@ body{
 	background: #C02425;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background-size: 150%;
+	background-size: 110%;
 }
 
 
@@ -11,7 +11,7 @@ body{
 .hdrfnt{
 	font-family: 'Kumar One', cursive;
 	font-size: 40px;
-	font-weight: bold;
+	font-weight: bold; 
 }
 
 /*Add top margins to the header and playsections*/
@@ -51,7 +51,7 @@ h1, .toptm{
 }
 
 .numhdr{
-	font-size: 60px;
+	font-size: 30px;
 }
 
 /*Style the Image section*/
@@ -62,9 +62,10 @@ h1, .toptm{
   border: 3px solid;
 }
 
-/*Remove bottom margin for jumbotrons*/
+/*Remove bottom margin & top padding for jumbotrons*/
 .gmsec{
   margin-bottom: 0px;
+  padding-top: 0px;
 }
 
 /*Style the Game button section*/
@@ -75,9 +76,9 @@ h1, .toptm{
   font-family: 'Oleo Script', cursive;
   color: #F0CB35;
   text-align: center;
-  height: 100px;
-	width: 100%;
-	font-size: 40px;
+  height: 70px;
+	width: 80%;
+	font-size: 30px;
 }
 
 /*Change cursor to hand when hovering over the button*/
@@ -121,7 +122,7 @@ h1, .toptm{
   display: none;
   position: absolute;
   top: 20%;
-  left: 30%;
+  left: 25%;
   background: #000;
   width: 800px;
   height: 500px;
