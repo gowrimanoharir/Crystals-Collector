@@ -1,7 +1,8 @@
+/*Define back ground gradient color*/
 body{
 	background: #C02425;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-size: 150%;
 }
 
@@ -34,7 +35,13 @@ h1, .toptm{
 	color: red;
 }
 
+/*Style Instruction as link*/
+.instruc:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+/*Style the Gollum & Fellowship Score section*/
 .jumbotron{
 	background: none;
 }
@@ -47,36 +54,42 @@ h1, .toptm{
 	font-size: 60px;
 }
 
+/*Style the Image section*/
 .imgsize{
 	width: 400px;
-	height: 300px;
-	border-radius: 180px;
+  height: 300px;
+  border-radius: 180px;
+  border: 3px solid;
 }
 
+/*Remove bottom margin for jumbotrons*/
+.gmsec{
+  margin-bottom: 0px;
+}
+
+/*Style the Game button section*/
 .gmbutton{
 	background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family: 'Oleo Script', cursive;
-    color: #F0CB35;
-    text-align: center;
-    height: 100px;
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Oleo Script', cursive;
+  color: #F0CB35;
+  text-align: center;
+  height: 100px;
 	width: 100%;
 	font-size: 40px;
-
 }
 
+/*Change cursor to hand when hovering over the button*/
 .btn:hover{
 	cursor: pointer;
 	color: #F0CB35;
 }
 
+/*Change default focus settings so that the font color is retained*/
 .btn:focus{
 	outline: none; 
 	color: #F0CB35;
-	background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .pad{
@@ -90,7 +103,7 @@ h1, .toptm{
 	padding-top: 5px;
 }
 
-/*pop up*/
+/*Webpage style & positions when Instruction pop up displays*/
 #overlay {
   display: none;
   position: absolute;
@@ -102,24 +115,28 @@ h1, .toptm{
   opacity: 0.8;
   z-index: 100;
 }
+
+/*Style pop up position and background color of Instruction pop up*/
 #popup {
   display: none;
   position: absolute;
-  top: 30%;
-  left: 35%;
+  top: 20%;
+  left: 30%;
   background: #000;
   width: 800px;
   height: 500px;
-  margin-left: -100px; /*Half the value of width to center div*/
-  margin-top: -100px; /*Half the value of height to center div*/
   z-index: 200;
 }
+
+/*Style close button's position and color of Instruction pop up*/
 #popupclose {
   float: right;
   padding: 10px;
   cursor: pointer;
   color: #F0CB35;
 }
+
+/*Style contents color and font of Instruction pop up*/
 .popupcontent {
   padding: 0 30px 30px 30px;
   font-family: 'Oleo Script', cursive;
@@ -129,7 +146,3 @@ h1, .toptm{
 }
 
 
-.instruc:hover{
-	text-decoration: underline;
-	cursor: pointer;
-}

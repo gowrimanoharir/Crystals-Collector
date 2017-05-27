@@ -33,23 +33,26 @@
 		</div>
 		
 		<!--Game section-->	
-		<div class="jumbotron">
-
+		<div class="jumbotron gmsec">
+			
 			<div class="row toptm">
+				<!--Display the Game Score-->	
 				<div class="col-md-3 col-xs-3">
 					<h3 class='text-center hdrfnt'>Gollum</h3>
 					<p class='text-center'>
-					<span id='gameNumber' class='numdisplay'>
+					<span id='gollumNumber' class='numdisplay'>
 					</span>
 					</p>
 				</div>
 				
+				<!--Display the Game Image-->	
 				<div class="col-md-6 col-xs-6">
 					<img src="assets/images/wait.jpg"
 					 class="imgsize center-block" id="again">
 					 <p class="pad text-center">&nbsp;<i id="pl-again" class='score'></i>&nbsp;</p>
 				</div>
-
+				
+				<!--Display the User Score-->	
 				<div class="col-md-3 col-xs-3">
 					<h3 class='text-center hdrfnt'>Fellowship</h3>
 					<p class='text-center'>
@@ -59,23 +62,26 @@
 				</div>
 			</div>
 		</div>
-		<div class="jumbotron">
 
+		<!--Game button section-->	
+		<div class="jumbotron gmsec">
+
+			<!--Display the Game Buttons-->	
 			<div class="row">
 				<div class="col-md-3 col-xs-3">
-					<button class='js-hobbit  btn center-block gmbutton' value='0'>Frodo</button>
+					<button class='js-fellow  btn center-block gmbutton' value='0'>Frodo</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<button class='js-hobbit  btn center-block gmbutton' value='1' >Sam</button>
+					<button class='js-fellow  btn center-block gmbutton' value='1' >Sam</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<button class='js-hobbit btn center-block gmbutton' value='2' >Aragorn</button>
+					<button class='js-fellow btn center-block gmbutton' value='2' >Aragorn</button>
 				</div>
 
 				<div class="col-md-3 col-xs-3">
-					<button class='js-hobbit btn  center-block gmbutton' value='3' >Legolas</button>
+					<button class='js-fellow btn  center-block gmbutton' value='3' >Legolas</button>
 				</div>
 				
 			</div>
@@ -83,15 +89,18 @@
 		</div>
 
 	</div>
-
+	
+	<!--Defines the background when Instruction popup displays-->	
 	<div id="overlay"></div>
+
+	<!--Instruction popup display-->	
 	<div id="popup">
 	    <div class="popupcontrols">
 	        <span id="popupclose">X</span>
 	    </div>
 	    <div class="popupcontent">
 	        <ul>
-	        	<h3 class="text-center">GAME PLAY:</h3>
+	        	<h3 class="text-center">HOW TO PLAY:</h3>
 	        	<li>Gollum will be assigned hit points at start of each round</li>
 	        	<li>There are 4 characters chosen for you and each character gets different attack points at start of each round</li>
 	        	<li>By selecting (clicking) a character their attack point will be added to Fellowship's points</li>
